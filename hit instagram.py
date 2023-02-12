@@ -1,6 +1,5 @@
 import requests,random,os,pyfiglet
 from uuid import *
-from faker import Faker
 from GDO_Email import Azoz 
 uid = str(uuid4())
 R="\033[1;31m" # احمر
@@ -17,7 +16,7 @@ def gmail():
     iid = input(" 𝗘𝗡𝗧𝗘𝗥 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗜𝗗 : ")
     os.system('clear')
     print(logo)
-    for files in open('username.txt',"r").read().splitlines():
+    for files in open('username2.txt',"r").read().splitlines():
            email = files.split('\n')[0]
            GDO = Azoz.gmail(email)
            res = requests.post('https://i.instagram.com/api/v1/accounts/login/',headers = {
@@ -81,11 +80,8 @@ def gmailsc():
     os.system("clear")
     print(logo)
     while True:
-        fake = Faker()
-        fname = fake.first_name()
         k = 'qwertyui.opasdfghjklzxcvbnm'
-        user = str(''.join(random.choice(k)for i in range(3)))
-        userr = fname+user
+        user = str(''.join(random.choice(k)for i in range(6)))
         t = requests.get(f'https://www.instagram.com/web/search/topsearch/?context=blended&query={userr}&rank_token=0.5548051178594293',headers = {
 "cookie":'sessionid='+sess,
 "user_agent":"Instagram 6.12.1 Android (30/11; 360dpi; 720x1339; samsung; SM-A022F; a02; mt6739; en_GB)"}).json()['users']
@@ -154,11 +150,8 @@ def aolsc():
  os.system("clear")
  print(logo)
  while True:
-     usd = "".join(random.choice("qwertyuiopasdfghjklzxcvbnmp")for i in range(4))
-     fake = Faker()
-     fname = fake.first_name()
-     ussd = fname+usd
-     instagram_users = requests.get(f"https://www.instagram.com/api/v1/web/search/topsearch/?context=blended&query={ussd}&rank_token=0.939601764314091&include_reel=true&search_surface=web_top_search",headers = {
+     usd = "".join(random.choice("qwertyuiopasdfghjklzxcvbnmp")for i in range(6))
+     instagram_users = requests.get(f"https://www.instagram.com/api/v1/web/search/topsearch/?context=blended&query={usd}&rank_token=0.939601764314091&include_reel=true&search_surface=web_top_search",headers = {
 "accept-encoding":"gzip, deflate",
 "accept-language":"ar-AE,ar;q=0.9,en-US;q=0.8,en;q=0.7",
 "referer":"https://www.instagram.com/instagram/",

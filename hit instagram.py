@@ -81,7 +81,7 @@ def gmailsc():
     print(logo)
     while True:
         k = 'qwertyui.opasdfghjklzxcvbnm'
-        userr = str(''.join(random.choice(k)for i in range(6)))
+        user = str(''.join(random.choice(k)for i in range(6)))
         t = requests.get(f'https://www.instagram.com/web/search/topsearch/?context=blended&query={user}&rank_token=0.5548051178594293',headers = {
 "cookie":'sessionid='+sess,
 "user_agent":"Instagram 6.12.1 Android (30/11; 360dpi; 720x1339; samsung; SM-A022F; a02; mt6739; en_GB)"}).json()['users']
